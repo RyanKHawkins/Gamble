@@ -46,7 +46,7 @@ function resetBet() {
 }
 
 function isValidBet() {
-    if (bet.value <= bankAmount && bet.value > 0) {return true};
+    if (bet.value <= bankAmount && bet.value > 0) { return true };
     return false
 }
 
