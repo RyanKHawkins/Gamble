@@ -10,7 +10,7 @@ const QSA = (q) => [...document.querySelectorAll(q)]
 //Initiate variables
 const bankDisplay = QS("#bankDisplay")
 var bankAmount = 1000
-bankDisplay.innerText = `$ ${bankAmount.toLocaleString()}`
+updateBankDisplay()
 var message = QS("#message")
 const bet = QS("#betInput")
 const bet_button = QS("#betButton")
