@@ -59,7 +59,6 @@ function playBet() {
         displayTempMessage(`You don't have $${bet.value}.`)
     }
 
-
     else {
         let currentBet = parseInt(bet.value)
         let randNum = Math.round(Math.random())
@@ -77,15 +76,3 @@ function playBet() {
     resetBet()
 }
 
-
-
-/* Old way
-setInterval(
-    function () {
-        //if (bankAmount < 100) { bankAmount += 5 }
-        if (bankAmount <= 0) { bankAmount = 10 }
-        bankDisplay.innerText = `$ ${bankAmount.toLocaleString()}`
-        QS("#betInput").setAttribute("max", `${bankAmount}`)
-    }, 2000
-)
-*/
