@@ -38,7 +38,7 @@ function displayTempMessage(text, timeDelay = 2000) {
 }
 
 function updateBankDisplay() {
-    bankDisplay.innerText = `$${bankAmount.toLocaleString()}`
+    bankDisplay.innerText = `Bank:  $${bankAmount.toLocaleString()}`
 }
 
 function resetBet() {
