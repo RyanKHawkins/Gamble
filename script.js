@@ -38,7 +38,6 @@ function displayTempMessage(text, timeDelay = 2000) {
 }
 
 function updateBankDisplay() {
-    if (bankAmount <= 0) { bankAmount = 10 };
     bankDisplay.innerText = `$${bankAmount.toLocaleString()}`
 }
 
@@ -53,12 +52,16 @@ function isValidBet() {
 }
 
 function playBet() {
-    isValidBet() ? console.log("bet valid") : console.log("bet not valid")
+
+    if (!isValidBet()) resetBet()
+
     if (bet.value <= 0) {
-        displayTempMessage("You must select a bet amount greater than 0.")
+        displayTempMessage("You must select a bet amount greater than 0.", 1000)
+        return
     }
-    else if (bet.value > bankAmount) {
-        displayTempMessage(`You don't have $${bet.value}.`)
+    if (bet.value > bankAmount) {
+        displayTempMessage(`You don't have $${bet.value}.`, 1000)
+        return
     }
 
     else {
@@ -71,10 +74,10 @@ function playBet() {
             displayTempMessage(`I'm sorry. You lost $${currentBet.toLocaleString()}`)
             message.style.color = "red"
             bankAmount -= currentBet
+            if (bankAmount <= 0) { bankAmount = 10 };
         }
     }
 
     updateBankDisplay()
     resetBet()
 }
-
