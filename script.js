@@ -51,9 +51,9 @@ function isValidBet() {
 }
 
 function playBet() {
-    isValidBet() ? console.log("valid") : console.log("not valid")
+    isValidBet() ? console.log("bet valid") : console.log("bet not valid")
     if (bet.value <= 0) {
-        displayTempMessage("You must select a bet amount.")
+        displayTempMessage("You must select a bet amount greater than 0.")
     }
     else if (bet.value > bankAmount) {
         displayTempMessage(`You don't have $${bet.value}.`)

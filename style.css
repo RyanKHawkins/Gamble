@@ -1,4 +1,14 @@
+body {
+    background-color: #e7dfce
+}
+
 button {
     margin: 5px;
     user-select: none;
+    background-color: rgb(44, 66, 99);
+    color: #e7dfce
+}
+
+button:active{
+    background-color: rgba(50, 75, 125, .75);
 }
