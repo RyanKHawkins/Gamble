@@ -26,11 +26,13 @@ setBetHalf.addEventListener("click",
     () => { bet.value = parseInt(Math.round(bankAmount)) / 2 }
 )
 
-function displayTempMessage(text, timeDelay = 5000) {
+function displayTempMessage(text, timeDelay = 2000) {
+    bet_button.style.visibility = "hidden"
     message.innerText = text
     setInterval(() => {
         message.innerText = "Place your bet."
         message.style = "normal"
+        bet_button.style.visibility = "initial"
         //message.style.color = "black"
     }, timeDelay)
 }
