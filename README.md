@@ -1,6 +1,7 @@
 # Gamble
 
-* 
+* You start out with $1,000.
+* You can bet a specified amount, half, or all of your bank.
 * 
 
 
