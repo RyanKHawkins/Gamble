@@ -1,19 +1,37 @@
+:root {
+    --lighterblue: rgba(50, 75, 125, .75);
+    --deepblue: rgb(44, 66, 99);
+    --creamy: #e7dfce;
+}
+
 body {
-    background-color: #e7dfce
+    background-color: var(--creamy)
+}
+
+#game {
+    border: 5px double var(--deepblue);
+    padding: 5px 25px
 }
 
 button {
     margin: 5px;
+    //text-align: center;
     user-select: none;
-    background-color: rgb(44, 66, 99);
+    background-color: var(--deepblue);
     color: #e7dfce;
 }
 
 button:active{
-    background-color: rgba(50, 75, 125, .75);
+    background-color: var(--lighterblue);
+}
+
+#specialBetting {
+    width: 250px;
 }
 
 .specialBetButtons {
     display: flex;
     background-color: red;
+    height: 25px;
+    width: 75px;
 }
