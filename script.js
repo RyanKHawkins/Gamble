@@ -80,7 +80,7 @@ function playBet() {
             displayTempMessage(`I'm sorry. You lost $${currentBet.toLocaleString()}`)
             message.style.color = "red"
             bankAmount -= currentBet
-            if (bankAmount <= 0) { bankAmount = 10 };
+            if (bankAmount <= 0) { bankAmount = 50 };
         }
     }
 
