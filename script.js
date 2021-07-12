@@ -20,10 +20,16 @@ const setBetAll = QS("#betAllButton")
 //Event Listeners
 bet_button.addEventListener("click", playBet)
 setBetAll.addEventListener("click",
-    () => { bet.value = parseInt(bankAmount) }
+    () => {
+        bet.value = parseInt(bankAmount)
+        playBet()
+    }
 )
 setBetHalf.addEventListener("click",
-    () => { bet.value = parseInt(Math.round(bankAmount)) / 2 }
+    () => {
+        bet.value = parseInt(Math.round(bankAmount)) / 2
+        playBet()
+    }
 )
 
 function displayTempMessage(text, timeDelay = 2000) {
