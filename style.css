@@ -15,10 +15,11 @@ body {
 
 button {
     margin: 5px;
-    //text-align: center;
     user-select: none;
     background-color: var(--deepblue);
     color: #e7dfce;
+    width: 75px;
+    height: 25px;
 }
 
 button:active{
@@ -26,12 +27,12 @@ button:active{
 }
 
 #specialBetting {
-    width: 250px;
+    width: 500px;
 }
 
 .specialBetButtons {
-    display: flex;
+    //display: flex;
     background-color: red;
-    height: 25px;
-    width: 75px;
+    //height: 25px;
+    //width: 75px;
 }
