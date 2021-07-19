@@ -7,7 +7,7 @@ starting with one.
 const QS = (q) => document.querySelector(q)
 const QSA = (q) => [...document.querySelectorAll(q)]
 
-//Initiate variables
+//Initiate global variables
 const bankDisplay = QS("#bankDisplay")
 var bankAmount = 1000
 updateBankDisplay()
@@ -17,7 +17,7 @@ const bet_button = QS("#betButton")
 const setBetHalf = QS("#betHalfButton")
 const setBetAll = QS("#betAllButton")
 
-//Event Listeners
+//Set Event Listeners
 bet_button.addEventListener("click", playBet)
 setBetAll.addEventListener("click",
     () => {
