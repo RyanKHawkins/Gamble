@@ -70,18 +70,16 @@ function playBet() {
         return
     }
 
-    else {
-        let currentBet = parseInt(bet.value)
-        let randNum = Math.round(Math.random())
-        if (randNum == 0) {
-            displayTempMessage(`You won $${currentBet.toLocaleString()}!`)
-            bankAmount += currentBet
-        } else {
-            displayTempMessage(`I'm sorry. You lost $${currentBet.toLocaleString()}`)
-            message.style.color = "red"
-            bankAmount -= currentBet
-            if (bankAmount <= 0) { bankAmount = 50 };
-        }
+    let currentBet = parseInt(bet.value)
+    let randNum = Math.round(Math.random())
+    if (randNum == 0) {
+        displayTempMessage(`You won $${currentBet.toLocaleString()}!`)
+        bankAmount += currentBet
+    } else {
+        displayTempMessage(`I'm sorry. You lost $${currentBet.toLocaleString()}`)
+        message.style.color = "red"
+        bankAmount -= currentBet
+        if (bankAmount <= 0) { bankAmount = 50 };
     }
 
     updateBankDisplay()
