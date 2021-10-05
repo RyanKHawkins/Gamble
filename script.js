@@ -85,3 +85,24 @@ function playBet() {
     updateBankDisplay()
     resetBet()
 }
+
+function testOdds(numOfTests) {
+    var numOfWins = 0
+    var numOfPlays = 0
+    var numOfLosses = 0
+
+    for (let i = 0; i < parseInt(numOfTests); i++) {
+        let randNum = Math.round(Math.random())
+        numOfPlays++
+        randNum == 0 ? numOfWins++ : numOfLosses++
+    }
+    
+    var winPercentage = numOfWins / numOfPlays
+
+    console.log(`
+    Wins:  ${numOfWins}
+    Losses:  ${numOfLosses}
+    Plays:  ${numOfPlays}
+    You won ${winPercentage.toFixed(2)} of the games.
+    `)
+}
