@@ -18,8 +18,8 @@ const setBetHalf = QS("#betHalfButton")
 const setBetAll = QS("#betAllButton")
 
 //Set Event Listeners
-window.addEventListener("click", updateBankDisplay)
 bet_button.addEventListener("click", playBet)
+
 setBetAll.addEventListener("click",
     () => {
         bet.value = parseInt(bankAmount)
@@ -33,6 +33,7 @@ setBetHalf.addEventListener("click",
     }
 )
 
+//TODO:  Figure out timing inconsistency
 function displayTempMessage(text, timeDelay = 2000) {
     bet_button.style.visibility = "hidden"
     message.innerText = text
@@ -49,18 +50,15 @@ function updateBankDisplay() {
 }
 
 function resetBet() {
-    QS("#betInput").setAttribute("max", `${bankAmount}`)
+    bet.setAttribute("max", `${bankAmount}`)
     bet.value = 0
 }
 
 function isValidBet() {
-    if (bet.value <= bankAmount && bet.value > 0) { return true };
-    return false
+    return (bet.value <= bankAmount && bet.value > 0)
 }
 
 function playBet() {
-
-    if (!isValidBet()) resetBet()
 
     if (bet.value <= 0) {
         displayTempMessage("You must select a bet amount greater than 0.", 1000)
