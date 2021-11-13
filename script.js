@@ -18,6 +18,7 @@ const setBetHalf = QS("#betHalfButton")
 const setBetAll = QS("#betAllButton")
 
 //Set Event Listeners
+window.addEventListener("click", updateBankDisplay)
 bet_button.addEventListener("click", playBet)
 setBetAll.addEventListener("click",
     () => {
