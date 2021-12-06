@@ -41,10 +41,11 @@ button {
     color: #e7dfce;
     width: 75px;
     height: 25px;
+    border: none;
 }
 
 button:hover {
-    opacity: .75;
+    opacity: .85;
     border-left: 3px solid var(--creamy);
     border-right: 3px solid var(--creamy);
 }
