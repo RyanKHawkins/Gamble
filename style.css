@@ -2,24 +2,51 @@
     --lighterblue: rgba(50, 75, 125, .75);
     --deepblue: rgb(44, 66, 99);
     --creamy: #e7dfce;
+    --darkred: rgb(190, 0, 50);
 }
 
 body {
-    background-color: var(--creamy)
+    background-color: var(--creamy);
+    user-select: none;
 }
 
 #game {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 5px double var(--deepblue);
-    padding: 5px 25px
+    //padding: 5px 25px
+}
+
+#display {
+    width: 160px;
+}
+
+#bankDisplay {
+    border: 2px solid var(--deepblue);
+    padding: 5px 10px;
+    
 }
 
 button {
     margin: 5px;
-    user-select: none;
-    background-color: var(--deepblue);
+    background-color: var(--darkred);
     color: #e7dfce;
     width: 75px;
     height: 25px;
+}
+
+button:hover {
+    opacity: .75;
+    border-left: 3px solid var(--creamy);
+    border-right: 3px solid var(--creamy);
 }
 
 button:active{
@@ -27,12 +54,16 @@ button:active{
 }
 
 #specialBetting {
-    width: 500px;
+    width: 160px;
+    //border: 2px dotted black;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
 .specialBetButtons {
     //display: flex;
-    background-color: red;
+    background-color: var(--deepblue);
     //height: 25px;
-    //width: 75px;
+    width: 100%;
 }
