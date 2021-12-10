@@ -19,6 +19,9 @@ const setBetAll = QS("#betAllButton")
 
 //Set Event Listeners
 bet_button.addEventListener("click", playBet)
+window.addEventListener("keydown", function (event) {
+    if (event.keyCode == "13") { playBet() }
+})
 
 setBetAll.addEventListener("click",
     () => {
