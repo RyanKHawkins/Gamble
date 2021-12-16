@@ -64,7 +64,7 @@ function isValidBet() {
 function playBet() {
 
     if (bet.value <= 0) {
-        displayTempMessage("You must select a bet amount greater than 0.", 1000)
+        displayTempMessage("Bet greater than 0.", 1000)
         return
     }
     if (bet.value > bankAmount) {
@@ -78,7 +78,7 @@ function playBet() {
         displayTempMessage(`You won $${currentBet.toLocaleString()}!`)
         bankAmount += currentBet
     } else {
-        displayTempMessage(`I'm sorry. You lost $${currentBet.toLocaleString()}`)
+        displayTempMessage(`You lost $${currentBet.toLocaleString()}`)
         message.style.color = "red"
         bankAmount -= currentBet
         if (bankAmount <= 0) { bankAmount = 50 };
