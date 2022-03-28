@@ -37,10 +37,10 @@ setBetHalf.addEventListener("click",
 )
 
 //TODO:  Figure out timing inconsistency
-function displayTempMessage(text, timeDelay = 2000) {
+function displayTempMessage(text, timeDelay = 1000) {
     bet_button.style.visibility = "hidden"
     message.innerText = text
-    setInterval(() => {
+    setTimeout(() => {
         message.innerText = "Place your bet."
         message.style = "normal"
         bet_button.style.visibility = "initial"
