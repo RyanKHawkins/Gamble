@@ -11,5 +11,3 @@
 
 
 [Right-click here to play.](https://f5devlife.github.io/Gamble/)
-
-Test:  I'm changing this on VSC and commiting it with the command line.
