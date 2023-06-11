@@ -1,5 +1,6 @@
 # Gamble (_title to be changed later?_)
 
+Gamble with fake money. Each time you bet, the game randomly chooses if you won or not.
 
 ### Gameplay
 * You start out with $1,000 in your bank.
