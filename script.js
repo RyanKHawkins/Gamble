@@ -20,7 +20,7 @@ const setBetAll = QS("#betAllButton")
 //Set Event Listeners
 bet_button.addEventListener("click", playBet)
 window.addEventListener("keydown", function (event) {
-    if (event.keyCode == "13") { playBet() }
+    if (event.key == "Enter") { playBet() }
 })
 
 setBetAll.addEventListener("click",
@@ -98,7 +98,7 @@ function testOdds(numOfTests) {
         numOfPlays++
         randNum == 0 ? numOfWins++ : numOfLosses++
     }
-    
+
     var winPercentage = numOfWins / numOfPlays
 
     console.log(`
