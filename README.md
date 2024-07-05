@@ -14,4 +14,4 @@ Gamble with fake money. Each time you bet, the game randomly chooses if you won 
 * If you go bankrupt, your bank account will be replenished with $50.
 
 
-[Right-click here to play.](https://f5devlife.github.io/Gamble/)
+[Right-click here to play.](https://RyanKHawkins.github.io/Gamble/)
