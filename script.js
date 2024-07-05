@@ -9,13 +9,14 @@ const QSA = (q) => [...document.querySelectorAll(q)]
 
 //Initiate global variables
 const bankDisplay = QS("#bankDisplay")
-var bankAmount = 1000
-updateBankDisplay()
-var message = QS("#message")
+let bankAmount = 1000
+let message = QS("#message")
 const bet = QS("#betInput")
 const bet_button = QS("#betButton")
-const setBetHalf = QS("#betHalfButton")
-const setBetAll = QS("#betAllButton")
+const bet_half_button = QS("#betHalfButton")
+const bet_all_button = QS("#betAllButton")
+
+updateBankDisplay()
 
 //Set Event Listeners
 bet_button.addEventListener("click", playBet)
@@ -23,13 +24,13 @@ window.addEventListener("keydown", function (event) {
     if (event.key == "Enter") { playBet() }
 })
 
-setBetAll.addEventListener("click",
+bet_all_button.addEventListener("click",
     () => {
         bet.value = parseInt(bankAmount)
         playBet()
     }
 )
-setBetHalf.addEventListener("click",
+bet_half_button.addEventListener("click",
     () => {
         bet.value = parseInt(Math.round(bankAmount)) / 2
         playBet()
@@ -83,15 +84,14 @@ function playBet() {
         bankAmount -= currentBet
         if (bankAmount <= 0) { bankAmount = 50 };
     }
-
     updateBankDisplay()
     resetBet()
 }
 
 function testOdds(numOfTests) {
-    var numOfWins = 0
-    var numOfPlays = 0
-    var numOfLosses = 0
+    let numOfWins = 0
+    let numOfPlays = 0
+    let numOfLosses = 0
 
     for (let i = 0; i < parseInt(numOfTests); i++) {
         let randNum = Math.round(Math.random())
