@@ -78,13 +78,17 @@ function playBet() {
     if (randNum == 0) {
         displayTempMessage(`You won $${currentBet.toLocaleString()}!`)
         bankAmount += currentBet
+        setTimeout(updateBankDisplay, 1000)
     } else {
         displayTempMessage(`You lost $${currentBet.toLocaleString()}`)
         message.style.color = "red"
         bankAmount -= currentBet
-        if (bankAmount <= 0) { bankAmount = 50 };
+        if (bankAmount <= 0) {
+            bankDisplay.innerText = "BANKRUPT!!!"
+            bankAmount = 50;
+        };
+        setTimeout(updateBankDisplay, 1000);
     }
-    updateBankDisplay()
     resetBet()
 }
 
