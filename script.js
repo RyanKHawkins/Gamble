@@ -4,17 +4,18 @@ Assortment of gambling games,
 starting with one.
 */
 
-const QS = (q) => document.querySelector(q)
-const QSA = (q) => [...document.querySelectorAll(q)]
+const QS = (q) => document.querySelector(q);
+const QSA = (q) => [...document.querySelectorAll(q)];
 
-//Initiate global variables
-const bankDisplay = QS("#bankDisplay")
-let bankAmount = 1000
-let message = QS("#message")
-const bet = QS("#betInput")
-const bet_button = QS("#betButton")
-const bet_half_button = QS("#betHalfButton")
-const bet_all_button = QS("#betAllButton")
+//Get DOM variables
+const bankDisplay = QS("#bankDisplay");
+let bankAmount = 1000;
+let message = QS("#message");
+const bet = QS("#betInput");
+const bet_button = QS("#betButton");
+const bet_half_button = QS("#betHalfButton");
+const bet_all_button = QS("#betAllButton");
+const BETTING_ODDS = 0.65;
 
 updateBankDisplay()
 
@@ -74,8 +75,8 @@ function playBet() {
     }
 
     let currentBet = parseInt(bet.value)
-    let randNum = Math.round(Math.random())
-    if (randNum == 0) {
+    let randNum = Math.random();
+    if (randNum <= BETTING_ODDS) {
         displayTempMessage(`You won $${currentBet.toLocaleString()}!`)
         bankAmount += currentBet
         setTimeout(updateBankDisplay, 1000)
@@ -98,12 +99,12 @@ function testOdds(numOfTests) {
     let numOfLosses = 0
 
     for (let i = 0; i < parseInt(numOfTests); i++) {
-        let randNum = Math.round(Math.random())
+        let randNum = Math.random()
         numOfPlays++
-        randNum == 0 ? numOfWins++ : numOfLosses++
+        randNum <= BETTING_ODDS ? numOfWins++ : numOfLosses++
     }
 
-    var winPercentage = numOfWins / numOfPlays
+    let winPercentage = numOfWins / numOfPlays
 
     console.log(`
     Wins:  ${numOfWins}
